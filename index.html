@@ -75,29 +75,72 @@
 <h2>
 <a id="自我评价" class="anchor" href="#%E8%87%AA%E6%88%91%E8%AF%84%E4%BB%B7" aria-hidden="true"><span class="octicon octicon-link"></span></a>自我评价</h2>
 
-<h5>
-<a id="有自学热情-有代码洁癖" class="anchor" href="#%E6%9C%89%E8%87%AA%E5%AD%A6%E7%83%AD%E6%83%85-%E6%9C%89%E4%BB%A3%E7%A0%81%E6%B4%81%E7%99%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>有自学热情 有代码洁癖</h5>
-
-<h5>
-<a id="能阅读英文技术文档" class="anchor" href="#%E8%83%BD%E9%98%85%E8%AF%BB%E8%8B%B1%E6%96%87%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>能阅读英文技术文档</h5>
-
-<h5>
-<a id="可以独立解决问题googlestackoverflow" class="anchor" href="#%E5%8F%AF%E4%BB%A5%E7%8B%AC%E7%AB%8B%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98googlestackoverflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>可以独立解决问题（Google、Stackoverflow）</h5>
-
-<h5>
-<a id="夜跑族-业余马拉松" class="anchor" href="#%E5%A4%9C%E8%B7%91%E6%97%8F-%E4%B8%9A%E4%BD%99%E9%A9%AC%E6%8B%89%E6%9D%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>夜跑族 业余马拉松</h5>
+<pre><code> 有自学热情 有代码洁癖 
+ 能阅读英文技术文档
+ 完成技术框架调研 攻克疑难杂症
+ 具有一定产品思维
+ 夜跑族 业余马拉松
+</code></pre>
 
 <h2>
 <a id="工作经历" class="anchor" href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>工作经历</h2>
 
-<h5>
-<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h5>
+<pre><code>GCBI平台(https://www.gcbi.com.cn)
+2014.03~
+介绍：为了解决目前线下基因分析效率低下、沟通成本高、分析工具不集中而研发的一款在线一站式平台，
+目前支持affy18款芯片分析，测序分析平台正在研发
+(简而言之就是研究者要提升职称就需要做各种基因研究分析，然后用分析后的结果图在业内发表论文，论文评级与职称挂钩)
+用户群：医生、高校教师、生物研究机构人员提供
+主要模块：
+1、知识库(就是上面域名的首页)
+功能介绍：给用户提供一个资料搜索平台，主要参照NCBI(与研究者的关系相当于程序员与Google的关系)为原型做
+技术描述：用solr作为索引支撑，前端页面内嵌了JBrowser作为专门的基因浏览器，mysql分库
+2、实验室(https://www.gcbi.com.cn/gclab 需要登录才能进，账号不便贴)
+功能介绍：用户线上自己决定分析流程走向，节省与生物分析公司分析员沟通成本。
+技术描述：用js+svg+html实现前端工作流，redis替代session、缓存，nginx，RService用于Java与R语言通信，
+activiti完成对前端工作流转换与执行
+3、用户中心
+功能介绍：用户注册、激活、登录等功能
+4、通知模块
+功能介绍：将通知模块独立出来，方便各子模块的消息提醒功能直接引用此模块
+技术描述：rabbitMQ + 前端通知UI
+5… 还有R语言模块做分析算法支持、commons、tools、logs、图表、微信公众号等模块就不一一介绍了
+</code></pre>
 
-<h2>
-<a id="致谢" class="anchor" href="#%E8%87%B4%E8%B0%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>致谢</h2>
+<pre><code>塔罗运价魔方
+2013.05~2014.03
+介绍：抓取各类售卖机票渠道的航班、票价数据，对数据进行分析处理后在UI上以报表的形式展现
+用户群：各种卖机票渠道公司的票务管理人员，直观了解竞争对手价格走向
+主要模块：
+1、IP池
+功能介绍：从IP供应商购买接口，不停的获取IP存库。给爬虫模块提供IP接口
+技术描述：spring quartz、线程池
+2、爬虫：
+功能介绍：地毯式抓取各渠道所有航线信息存hbase库
+技术描述：httpClient、队列、任务抽象、hbase rowID设计
+3、数据处理：
+功能介绍：将hbase库的元数据以各种条件处理到oracle库(只保留近30天数据)中的格式化数据。
+提供30天前的hbase数据接口给WEB模块
+技术描述：hadoop zookeeper hbase
+4、WEB：
+功能介绍：用户可以自定义监控的航线列表，实时、历史查询各渠道航线信息，运价走势、运价预警，
+爬虫目标网站设置，航班、航线信息录入，各种数据统计、报表展现
+</code></pre>
+
+<pre><code>中国银行贷款系统
+2012.06~2013.04
+介绍：主要参与了贷款系统4个版本的开发工作、参与“银保通”(贷款与保险业务对接)系统的开发工作
+</code></pre>
+
+<pre><code>上海大众卓越商务平台
+2011.11~2012.06
+介绍：大众商务经理、总监去4S店做店访前、后，对4S店做KPI考核
+功能描述：用户店访前填店访计划，回来后完善店访报告，上级领导完成店访审批，用户对不合格的考核项做措施跟进。
+还有一线人员组织管理、经销商4S店信息录入、BI报表集成、个性化portal首页定制等模块
+</code></pre>
 
 <h5>
-<a id="感谢您花时间阅读我的简历期待能有机会和您共事" class="anchor" href="#%E6%84%9F%E8%B0%A2%E6%82%A8%E8%8A%B1%E6%97%B6%E9%97%B4%E9%98%85%E8%AF%BB%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86%E6%9C%9F%E5%BE%85%E8%83%BD%E6%9C%89%E6%9C%BA%E4%BC%9A%E5%92%8C%E6%82%A8%E5%85%B1%E4%BA%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>感谢您花时间阅读我的简历，期待能有机会和您共事。</h5>
+<a id="感谢你花时间阅读我的简历" class="anchor" href="#%E6%84%9F%E8%B0%A2%E4%BD%A0%E8%8A%B1%E6%97%B6%E9%97%B4%E9%98%85%E8%AF%BB%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>感谢你花时间阅读我的简历。</h5>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/liuzhen9327/resume">Resume</a> is maintained by <a href="https://github.com/liuzhen9327">liuzhen9327</a>.</span>
